@@ -7,6 +7,7 @@ class Agamotto < Formula
   depends_on "jq"
 
   def install
+    bin.install "Agamotto_SwiftPackageManager.bundle"
     bin.install "agamotto"
   end
 
