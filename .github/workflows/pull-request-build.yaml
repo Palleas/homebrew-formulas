@@ -1,0 +1,13 @@
+on:
+    pull_request: 
+        branches:
+            - main
+            
+jobs:
+    test-formulas:
+        runs-on: macos-latest
+        
+        steps:
+            - uses: actions/checkout@v4
+            - name: Test formula
+              run: brew install agamotto && agamotto --version
