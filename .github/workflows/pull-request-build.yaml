@@ -1,0 +1,15 @@
+on:
+    pull_request: 
+        branches:
+            - main
+            
+jobs:
+    test-formulas:
+        runs-on: macos-latest
+        
+        steps:
+            - uses: actions/checkout@v4
+            # Note: this is probably not the best way to test a formula since it prints a warning
+            # but I'm kind of used to homebrew yelling at me anyway so this is fine for now.
+            - name: Install and run formula
+              run: brew install agamotto.rb && agamotto --version
